@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Achados e Perdidos</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>📦 Achados e Perdidos</h1>
+
+<a href="{{ url_for('cadastrar') }}" class="botao">
+    + Cadastrar item
+</a>
+
+<form method="GET" class="busca">
+    <input
+        type="text"
+        name="busca"
+        placeholder="Buscar item..."
+        value="{{ busca }}"
+    >
+
+    <button type="submit">Buscar</button>
+</form>
+
+<div class="filtros">
+    <a href="/">Todos</a>
+    <a href="/?filtro=perdido">Perdidos</a>
+    <a href="/?filtro=encontrado">Encontrados</a>
+</div>
+
+{% with mensagens = get_flashed_messages() %}
+    {% if mensagens %}
+        {% for mensagem in mensagens %}
+            <div class="mensagem">
+                {{ mensagem }}
+            </div>
+        {% endfor %}
+    {% endif %}
+{% endwith %}
+
+{% for item in itens %}
+
+<div class="card">
+
+    <h2>{{ item["nome"] }}</h2>
+
+    <p>
+        <strong>Tipo:</strong>
+        {{ item["tipo"].capitalize() }}
+    </p>
+
+    <p>
+        <strong>Descrição:</strong>
+        {{ item["descricao"] }}
+    </p>
+
+    <p>
+        <strong>Local:</strong>
+        {{ item["local"] }}
+    </p>
+
+    <p>
+        <strong>Contato:</strong>
+        {{ item["contato"] }}
+    </p>
+
+    <p>
+        <strong>Status:</strong>
+        {{ item["status"] }}
+    </p>
+
+    {% if item["status"] != "Resolvido" %}
+        <a href="{{ url_for('resolver', id=item['id']) }}">
+            Marcar como resolvido
+        </a>
+    {% endif %}
+
+</div>
+
+{% else %}
+
+<p>Nenhum item encontrado.</p>
+
+{% endfor %}
+
+</body>
+</html>

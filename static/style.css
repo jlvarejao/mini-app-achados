@@ -1,0 +1,55 @@
+body {
+    font-family: Arial, sans-serif;
+    max-width: 900px;
+    margin: 40px auto;
+    padding: 20px;
+    background: #f2f2f2;
+}
+
+h1 {
+    text-align: center;
+}
+
+.card {
+    background: white;
+    padding: 20px;
+    margin: 20px 0;
+    border-radius: 10px;
+    box-shadow: 0 2px 5px #ccc;
+}
+
+input,
+textarea,
+select,
+button {
+    width: 100%;
+    padding: 10px;
+    margin: 8px 0 15px;
+    box-sizing: border-box;
+}
+
+button,
+.botao {
+    background: #222;
+    color: white;
+    border: none;
+    padding: 12px;
+    text-decoration: none;
+    display: inline-block;
+    cursor: pointer;
+}
+
+.filtros {
+    margin: 20px 0;
+}
+
+.filtros a {
+    margin-right: 15px;
+}
+
+.mensagem {
+    background: #d4edda;
+    padding: 15px;
+    margin: 15px 0;
+    border-radius: 5px;
+}

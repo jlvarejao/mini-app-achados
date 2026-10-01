@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadastrar Item</title>
+    <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+</head>
+
+<body>
+
+<h1>Cadastrar Item</h1>
+
+<form method="POST">
+
+    <label>Tipo:</label>
+
+    <select name="tipo" required>
+        <option value="perdido">Perdido</option>
+        <option value="encontrado">Encontrado</option>
+    </select>
+
+    <label>Nome do item:</label>
+    <input type="text" name="nome" required>
+
+    <label>Descrição:</label>
+    <textarea name="descricao" required></textarea>
+
+    <label>Local:</label>
+    <input type="text" name="local" required>
+
+    <label>Contato:</label>
+    <input type="text" name="contato" required>
+
+    <button type="submit">
+        Cadastrar
+    </button>
+
+</form>
+
+<a href="/">Voltar</a>
+
+</body>
+</html>
+
