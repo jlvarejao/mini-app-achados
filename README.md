@@ -56,7 +56,7 @@ O arquivo `achados.db` é criado automaticamente quando a aplicação é executa
 ### 1. Clonar o projeto
 
 ```bash
-git clone URL_DO_REPOSITORIO
+git clone https://github.com/jlvarejao/mini-app-achados.git
 ```
 
 Entre na pasta:
